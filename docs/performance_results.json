@@ -1,0 +1,18 @@
+{
+  "benchmark": "pure grid construction only",
+  "python": "3.9.6",
+  "orders": 100,
+  "slots": 2400,
+  "iterations": 20,
+  "median_ms": 1.679,
+  "min_ms": 1.619,
+  "max_ms": 2.035,
+  "excludes": [
+    "Frappe",
+    "database",
+    "network",
+    "permissions",
+    "browser",
+    "PDF"
+  ]
+}

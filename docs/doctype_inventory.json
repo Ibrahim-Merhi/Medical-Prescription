@@ -1,0 +1,189 @@
+[
+  {
+    "doctype": "Medical Prescription",
+    "export_fields": 94,
+    "fields": 94,
+    "export_permissions": [
+      {
+        "amend": 0,
+        "cancel": 0,
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "if_owner": 0,
+        "impersonate": 0,
+        "import": 0,
+        "permlevel": 0,
+        "mask": 0,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "System Manager",
+        "select": 0,
+        "share": 1,
+        "submit": 0,
+        "write": 1
+      }
+    ],
+    "child": false
+  },
+  {
+    "doctype": "Medical Prescription Item",
+    "export_fields": 49,
+    "fields": 50,
+    "export_permissions": [],
+    "child": true
+  },
+  {
+    "doctype": "Medication Administration Schedule",
+    "export_fields": 29,
+    "fields": 32,
+    "export_permissions": [],
+    "child": true
+  },
+  {
+    "doctype": "Medication Schedule",
+    "export_fields": 5,
+    "fields": 5,
+    "export_permissions": [],
+    "child": true
+  },
+  {
+    "doctype": "Past Drug Item",
+    "export_fields": 19,
+    "fields": 23,
+    "export_permissions": [],
+    "child": true
+  },
+  {
+    "doctype": "Assigned Doctors",
+    "export_fields": 7,
+    "fields": 7,
+    "export_permissions": [],
+    "child": true
+  },
+  {
+    "doctype": "Floor Assignment Plan",
+    "export_fields": 6,
+    "fields": 6,
+    "export_permissions": [
+      {
+        "amend": 0,
+        "cancel": 0,
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "if_owner": 0,
+        "impersonate": 0,
+        "import": 0,
+        "permlevel": 0,
+        "mask": 0,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "System Manager",
+        "select": 0,
+        "share": 1,
+        "submit": 0,
+        "write": 1
+      }
+    ],
+    "child": false
+  },
+  {
+    "doctype": "Floor Assignment Detail",
+    "export_fields": 5,
+    "fields": 5,
+    "export_permissions": [],
+    "child": true
+  },
+  {
+    "doctype": "Floor",
+    "export_fields": 6,
+    "fields": 6,
+    "export_permissions": [
+      {
+        "amend": 0,
+        "cancel": 0,
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "if_owner": 0,
+        "impersonate": 0,
+        "import": 0,
+        "permlevel": 0,
+        "mask": 0,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "System Manager",
+        "select": 0,
+        "share": 1,
+        "submit": 0,
+        "write": 1
+      }
+    ],
+    "child": false
+  },
+  {
+    "doctype": "Nurse PIN",
+    "export_fields": 5,
+    "fields": 5,
+    "export_permissions": [
+      {
+        "amend": 0,
+        "cancel": 0,
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "if_owner": 0,
+        "impersonate": 0,
+        "import": 0,
+        "permlevel": 0,
+        "mask": 0,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "System Manager",
+        "select": 0,
+        "share": 1,
+        "submit": 0,
+        "write": 1
+      }
+    ],
+    "child": false
+  },
+  {
+    "doctype": "Service Unit",
+    "export_fields": 4,
+    "fields": 4,
+    "export_permissions": [
+      {
+        "amend": 0,
+        "cancel": 0,
+        "create": 1,
+        "delete": 1,
+        "email": 1,
+        "export": 1,
+        "if_owner": 0,
+        "impersonate": 0,
+        "import": 0,
+        "permlevel": 0,
+        "mask": 0,
+        "print": 1,
+        "read": 1,
+        "report": 1,
+        "role": "System Manager",
+        "select": 0,
+        "share": 1,
+        "submit": 0,
+        "write": 1
+      }
+    ],
+    "child": false
+  }
+]

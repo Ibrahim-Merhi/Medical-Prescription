@@ -1,0 +1,77 @@
+[
+  {
+    "doctype": "Role",
+    "role_name": "Discharge Patient",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Doctor",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Emergency Medication Override",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Healthcare Practitioner",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Healthcare User",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Medical Prescription Viewer",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Nurse",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Nurse Supervisor",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Nursing Manager",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Nursing User",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Pharmacist",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Physician",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Reactivate Admission",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Resident",
+    "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "System Manager",
+    "desk_access": 1
+  }
+]

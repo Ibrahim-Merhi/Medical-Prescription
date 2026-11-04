@@ -1,0 +1,25 @@
+name: Static and isolated checks
+on: [push, pull_request]
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python -m compileall -q medical_prescription
+      - run: python -m unittest discover -s tests -v
+      - run: pip install ruff
+      - run: ruff check --select E9,F63,F7,F82 medical_prescription tests
+      - run: pip install build
+      - run: python -m build
+  javascript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: find medical_prescription/public/js -name '*.js' -exec node --check {} \;
+

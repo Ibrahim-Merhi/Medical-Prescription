@@ -1,0 +1,58 @@
+[
+  {
+    "file": "Client Script (2).csv",
+    "sha256": "90c9f94d931cba5ec432df1c0fd583c84051b12f5d47686b8b1a8ef1d82d057a",
+    "rows": 11,
+    "columns": 6,
+    "malformed_rows": []
+  },
+  {
+    "file": "Custom DocPerm.csv",
+    "sha256": "b99d5415178c6a490c6d5129862c54c85f8ec0ae51e27b16bd4d4bc8d3a8869a",
+    "rows": 414,
+    "columns": 21,
+    "malformed_rows": []
+  },
+  {
+    "file": "Custom Field (1).csv",
+    "sha256": "3660417757722eedcf1f89460d6e784784fda09069ef47cbb69f82ff174fcafe",
+    "rows": 165,
+    "columns": 54,
+    "malformed_rows": []
+  },
+  {
+    "file": "DocType (3).csv",
+    "sha256": "266a352d8676f153063e99af6c47849c02460434d1ea931cd2574c619dac2f81",
+    "rows": 2367,
+    "columns": 170,
+    "malformed_rows": []
+  },
+  {
+    "file": "Print Format (1).csv",
+    "sha256": "ff32e1aa06bf554c33e6962dbb8d5feedd4f63d594779adf562838bd6f785b5b",
+    "rows": 2,
+    "columns": 29,
+    "malformed_rows": []
+  },
+  {
+    "file": "Property Setter.csv",
+    "sha256": "d4654eb7fac53d1c3b5bf41ca1a8f13472ea56e1f0ca9845a41ef3174ebb8112",
+    "rows": 215,
+    "columns": 11,
+    "malformed_rows": []
+  },
+  {
+    "file": "Role (1).csv",
+    "sha256": "b1ce9d12ee6b083883339ef98ae7034ba9afc2c1f1fe19b09f3c950c6a6bc29f",
+    "rows": 17,
+    "columns": 7,
+    "malformed_rows": []
+  },
+  {
+    "file": "Server Script (1).csv",
+    "sha256": "bdf4b21df381a85b58d049c800b5cc7e72e8c443d8596a0388d184013ca05a84",
+    "rows": 36,
+    "columns": 14,
+    "malformed_rows": []
+  }
+]

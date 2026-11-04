@@ -1,0 +1,1186 @@
+{
+  "Medical Prescription": {
+    "fields": [
+      {
+        "fieldname": "prescription_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_gkod",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "display_sequence_text",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "version_no",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "prescription_date",
+        "fieldtype": "Date",
+        "options": ""
+      },
+      {
+        "fieldname": "prescription_time",
+        "fieldtype": "Time",
+        "options": ""
+      },
+      {
+        "fieldname": "floor",
+        "fieldtype": "Link",
+        "options": "Floor"
+      },
+      {
+        "fieldname": "service_unit",
+        "fieldtype": "Link",
+        "options": "Service Unit"
+      },
+      {
+        "fieldname": "bed_nb",
+        "fieldtype": "Data",
+        "options": "Name"
+      },
+      {
+        "fieldname": "column_break_shdx",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "medical_diagnosis",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "first_prescription_date",
+        "fieldtype": "Date",
+        "options": ""
+      },
+      {
+        "fieldname": "stay_duration_days",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "total_prescriptions_for_patient",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "request_number",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "weight",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "height",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dfg_estimated_mdrd",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_txdg",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "chief_complaint",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "notes",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "allergies",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "pregnancy",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "breastfeeding",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "renal_insufficiency",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "medical_department",
+        "fieldtype": "Link",
+        "options": "Medical Department"
+      },
+      {
+        "fieldname": "column_break_aveg",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "practitioner_full_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "medical_file",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "section_break_fcou",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "naming_series",
+        "fieldtype": "Select",
+        "options": "HLC-MP-.YYYY.-.#####"
+      },
+      {
+        "fieldname": "patient",
+        "fieldtype": "Link",
+        "options": "Patient"
+      },
+      {
+        "fieldname": "patient_name",
+        "fieldtype": "Data",
+        "options": "Name"
+      },
+      {
+        "fieldname": "practitioner",
+        "fieldtype": "Link",
+        "options": "Healthcare Practitioner"
+      },
+      {
+        "fieldname": "locked",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "locked_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_ytlm",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "status",
+        "fieldtype": "Select",
+        "options": "Draft\nActive\nLocked\nDischarge Initiated\nDischarged\nCancelled"
+      },
+      {
+        "fieldname": "practitioner_name",
+        "fieldtype": "Link",
+        "options": "Healthcare Practitioner"
+      },
+      {
+        "fieldname": "patient_encounter",
+        "fieldtype": "Link",
+        "options": "Patient Encounter"
+      },
+      {
+        "fieldname": "encounter_date",
+        "fieldtype": "Date",
+        "options": ""
+      },
+      {
+        "fieldname": "inpatient_record",
+        "fieldtype": "Link",
+        "options": "Inpatient Record"
+      },
+      {
+        "fieldname": "lock_reason",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "custom_nurse_assigned_floor",
+        "fieldtype": "Link",
+        "options": "Floor"
+      },
+      {
+        "fieldname": "custom_nurse_floor_ok",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_huyf",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_rcun",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "version_chain_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "root_prescription",
+        "fieldtype": "Link",
+        "options": "Medical Prescription"
+      },
+      {
+        "fieldname": "previous_prescription",
+        "fieldtype": "Link",
+        "options": "Medical Prescription"
+      },
+      {
+        "fieldname": "column_break_fdmh",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "version_source_type",
+        "fieldtype": "Select",
+        "options": "Encounter Update\nDaily Duplicate"
+      },
+      {
+        "fieldname": "source_patient_encounter",
+        "fieldtype": "Link",
+        "options": "Patient Encounter"
+      },
+      {
+        "fieldname": "medical_prescription_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "custom_schedule_matrix",
+        "fieldtype": "HTML",
+        "options": ""
+      },
+      {
+        "fieldname": "order_over_phone",
+        "fieldtype": "HTML",
+        "options": ""
+      },
+      {
+        "fieldname": "section_break_cisf",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "past_drugs",
+        "fieldtype": "Table",
+        "options": "Past Drug Item"
+      },
+      {
+        "fieldname": "over_phone_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "is_phone_order",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "requested_doctor",
+        "fieldtype": "Link",
+        "options": "Healthcare Practitioner"
+      },
+      {
+        "fieldname": "phone_order_created_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_created_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_tqfa",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_approved",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_approved_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_approved_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_initiated",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_jkhn",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_initiated_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_fhcd",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_initiated_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_bqki",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "pharmacy_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_finalized",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "pharmacist_notes",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_afqh",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_finalized_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "pharmacist_last_updated_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_mgao",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "discharge_finalized_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "pharmacist_last_updated_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_fclm",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "medications_sent",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "medications_sent_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "medications_sent_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "versioning_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "is_latest_version",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_ufwl",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_reyz",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "section_break_fwij",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "items",
+        "fieldtype": "Table",
+        "options": "Medical Prescription Item"
+      },
+      {
+        "fieldname": "administration_schedule",
+        "fieldtype": "Table",
+        "options": "Medication Administration Schedule"
+      }
+    ]
+  },
+  "Medical Prescription Item": {
+    "fields": [
+      {
+        "fieldname": "drug",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "drug_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage",
+        "fieldtype": "Select",
+        "options": "Once Only\nOnce Daily\nBID\nTID\nQID\n5 times a day\nOnce Bedtime\n1-0-0\n0-1-0\n0-0-1\n1-1-0\n1-0-1\n0-1-1\n1-1-1\n1-1-1-1\nOther"
+      },
+      {
+        "fieldname": "dosage_custom",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "frequencyy",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "period",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage_by_time_interval",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "ordered_by_practitioner",
+        "fieldtype": "Link",
+        "options": "Healthcare Practitioner"
+      },
+      {
+        "fieldname": "ordered_by_name",
+        "fieldtype": "Data",
+        "options": "Name"
+      },
+      {
+        "fieldname": "ordered_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "source_encounter",
+        "fieldtype": "Link",
+        "options": "Patient Encounter"
+      },
+      {
+        "fieldname": "remaining_period",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "item_unique_key",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "is_phone_order",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_approved",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_created_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_created_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "requested_doctor",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_approved_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_order_approved_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_pogi",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "interval",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "interval_uom",
+        "fieldtype": "Select",
+        "options": "\nHour\nDay"
+      },
+      {
+        "fieldname": "strength",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "strength_uom",
+        "fieldtype": "Select",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage_form",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dose_number",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dose_uom",
+        "fieldtype": "Select",
+        "options": "\nVial\nAmpoule\nBottle\ng\nmcg\nmg\nSachet\ncc\nL\nmL\nTablet\nUnits\nmEq\nApplication\nFlacon\nPatch\nDrops\nSuppo\nPuffs\nmg/Kg\nmg/h\nmg/Kg/h\nmcg/Kg/h\ncc/h\nmg/24h"
+      },
+      {
+        "fieldname": "frequency",
+        "fieldtype": "Select",
+        "options": "\nOD\nBID\nTID\nQID\nq2h\nq4h\nq6h\nq8h\nq12h\nq14h\nq16h\nq24h\nq48h\nQOD\n3x/week\n2x/week\n1x/week\nSTAT\nOnce"
+      },
+      {
+        "fieldname": "route",
+        "fieldtype": "Select",
+        "options": "\nPO\nPNG\nPEG\nPEJ\nIV\nIVSP\nIS\nIM\nS/C\nNebulizer\nPer-rectum\nS/L\nIntrathecal\nEpidural\nIntranasal\nOphthalmic\nOtic\nTransdermal\nVaginal\nInhalation"
+      },
+      {
+        "fieldname": "custom_time",
+        "fieldtype": "Select",
+        "options": "\nBefore meals\nAfter meals\nEvery morning\nEvery noon\nEvery evening\nQHS\nam\npm\nOver 15 mins\nOver 30 mins\nOver 1 hr\nOver 2 hrs\nOver 3 hrs\nOver 4 hrs"
+      },
+      {
+        "fieldname": "prn",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "hold",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "comment",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "stop_change",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "phone_steps_json",
+        "fieldtype": "Long Text",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_ztez",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "source_row_id",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "added_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "added_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "entry_datetime",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "day_counter",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "allow_duplicate_next_day",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "double_signature_required",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "is_stopped",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "stop_locked",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "stopped_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "stopped_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "stop_reason",
+        "fieldtype": "Small Text",
+        "options": ""
+      }
+    ]
+  },
+  "Medication Administration Schedule": {
+    "fields": [
+      {
+        "fieldname": "drug",
+        "fieldtype": "Link",
+        "options": "Item"
+      },
+      {
+        "fieldname": "drug_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "scheduled_date",
+        "fieldtype": "Date",
+        "options": ""
+      },
+      {
+        "fieldname": "scheduled_time",
+        "fieldtype": "Time",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "given",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "given_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "given_by",
+        "fieldtype": "Data",
+        "options": "Name"
+      },
+      {
+        "fieldname": "skipped",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "skip_reason",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "remarks",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "schedule_unique_key",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_cpkm",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "prescription_item_row_id",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "step_1_done",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "step_1_locked",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "step_2_done",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "step_1_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "step_2_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "step_1_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "step_2_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "completed",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "disabled",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "is_stopped_medicine",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "double_signature_required",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "second_signature_done",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "locked",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "second_signature_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "second_signature_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      }
+    ]
+  },
+  "Medication Schedule": {
+    "fields": [
+      {
+        "fieldname": "drug",
+        "fieldtype": "Link",
+        "options": "Item"
+      },
+      {
+        "fieldname": "time",
+        "fieldtype": "Time",
+        "options": ""
+      },
+      {
+        "fieldname": "date",
+        "fieldtype": "Date",
+        "options": ""
+      },
+      {
+        "fieldname": "given",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "given_by",
+        "fieldtype": "Link",
+        "options": "User"
+      }
+    ]
+  },
+  "Past Drug Item": {
+    "fields": [
+      {
+        "fieldname": "drug",
+        "fieldtype": "Link",
+        "options": "Item"
+      },
+      {
+        "fieldname": "drug_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "medication",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "period",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage_by_time_interval",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "interval",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "interval_uom",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "status",
+        "fieldtype": "Select",
+        "options": "\nStopped\nCourse Completed\nOne-Time Completed\nReplaced By New Order"
+      },
+      {
+        "fieldname": "remaining_period",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "item_row_ref",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_dztt",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "comment",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "strength",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "strength_uom",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "dosage_form",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "moved_on",
+        "fieldtype": "Datetime",
+        "options": ""
+      },
+      {
+        "fieldname": "moved_by",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "move_reason",
+        "fieldtype": "Small Text",
+        "options": ""
+      }
+    ]
+  },
+  "Assigned Doctors": {
+    "fields": [
+      {
+        "fieldname": "inpatient_record",
+        "fieldtype": "Link",
+        "options": "Inpatient Record"
+      },
+      {
+        "fieldname": "practitioner",
+        "fieldtype": "Link",
+        "options": "Healthcare Practitioner"
+      },
+      {
+        "fieldname": "practitioner_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "specialty",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "role_type",
+        "fieldtype": "Select",
+        "options": "\nTreating\nConsultant\nAnesthesia"
+      },
+      {
+        "fieldname": "active",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "read_only_primary",
+        "fieldtype": "Check",
+        "options": ""
+      }
+    ]
+  },
+  "Floor Assignment Plan": {
+    "fields": [
+      {
+        "fieldname": "naming_series",
+        "fieldtype": "Select",
+        "options": "FAP-.YYYY.-.#####"
+      },
+      {
+        "fieldname": "assignment_date",
+        "fieldtype": "Date",
+        "options": ""
+      },
+      {
+        "fieldname": "shift",
+        "fieldtype": "Select",
+        "options": "Morning\nEvening\nNight"
+      },
+      {
+        "fieldname": "assigned_by",
+        "fieldtype": "Link",
+        "options": "User"
+      },
+      {
+        "fieldname": "status",
+        "fieldtype": "Select",
+        "options": "Draft\nActive\nCancelled"
+      },
+      {
+        "fieldname": "assignment_details",
+        "fieldtype": "Table",
+        "options": "Floor Assignment Detail"
+      }
+    ]
+  },
+  "Floor Assignment Detail": {
+    "fields": [
+      {
+        "fieldname": "floor",
+        "fieldtype": "Link",
+        "options": "Floor"
+      },
+      {
+        "fieldname": "employee",
+        "fieldtype": "Link",
+        "options": "Employee"
+      },
+      {
+        "fieldname": "nurse_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "user_id",
+        "fieldtype": "Link",
+        "options": "User"
+      },
+      {
+        "fieldname": "note",
+        "fieldtype": "Small Text",
+        "options": ""
+      }
+    ]
+  },
+  "Floor": {
+    "fields": [
+      {
+        "fieldname": "floor_name",
+        "fieldtype": "Data",
+        "options": ""
+      },
+      {
+        "fieldname": "is_active",
+        "fieldtype": "Check",
+        "options": ""
+      },
+      {
+        "fieldname": "description",
+        "fieldtype": "Small Text",
+        "options": ""
+      },
+      {
+        "fieldname": "column_break_datx",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "sort_order",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "department",
+        "fieldtype": "Link",
+        "options": "Medical Department"
+      }
+    ]
+  },
+  "Nurse PIN": {
+    "fields": [
+      {
+        "fieldname": "nurse_info_section",
+        "fieldtype": "Section Break",
+        "options": ""
+      },
+      {
+        "fieldname": "nurse_user",
+        "fieldtype": "Link",
+        "options": "User"
+      },
+      {
+        "fieldname": "pin",
+        "fieldtype": "Password",
+        "options": ""
+      },
+      {
+        "fieldname": "enabled",
+        "fieldtype": "Check",
+        "options": ""
+      }
+    ]
+  },
+  "Service Unit": {
+    "fields": [
+      {
+        "fieldname": "medical_service",
+        "fieldtype": "Int",
+        "options": ""
+      },
+      {
+        "fieldname": "floor",
+        "fieldtype": "Link",
+        "options": "Floor"
+      },
+      {
+        "fieldname": "column_break_oifx",
+        "fieldtype": "Column Break",
+        "options": ""
+      },
+      {
+        "fieldname": "description",
+        "fieldtype": "Data",
+        "options": ""
+      }
+    ]
+  }
+}
