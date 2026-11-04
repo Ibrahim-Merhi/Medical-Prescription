@@ -1,5 +1,6 @@
 from frappe.model.document import Document
-from medical_prescription.services.prescription import validate, on_update
+
+from medical_prescription.services.prescription import on_update, validate
 
 
 class MedicalPrescription(Document):

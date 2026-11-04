@@ -16,5 +16,6 @@ healthcare = ">=16.0.0,<17.0.0"
 hrms = ">=16.0.0,<17.0.0"
 
 [tool.ruff]
+target-version = "py39"
 line-length = 100
 

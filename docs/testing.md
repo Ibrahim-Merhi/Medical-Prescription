@@ -5,14 +5,15 @@ Executed locally on 2026-11-04:
 |Check|Result|Limit|
 |---|---|---|
 |UTF-8 CSV parsing and row-width validation|8 files passed; zero malformed rows|Metadata/configuration only|
-|Isolated Python suite|16 tests passed, zero failures|Python 3.9.6, not target Python 3.14/Frappe|
+|Isolated Python suite|24 tests passed, zero failures|Python 3.9.6, not target Python 3.14/Frappe|
 |Python AST parsing|Passed for all repository Python files|No Frappe imports/runtime exercised|
 |App child-table linkage and field identity|Passed for 12 DocTypes|No database schema synchronization|
 |JavaScript syntax|All 3 form scripts passed Node --check|No browser/Frappe UI exercised|
 |Pure grid microbenchmark|Executed; see performance_results.json|No API/SQL/browser measurement|
-|Jinja/PDF render|Not executed|Renderer and Jinja unavailable locally|
-|Wheel/sdist build|Not executed|Build dependencies unavailable; download timed out|
-|Ruff lint|Not executed locally|Ruff unavailable; dependency download timed out|
+|Generic Jinja rendering|3 synthetic cases passed, including 55 medicine rows|Not Frappe sandbox or PDF rendering|
+|PDF rendering|Not executed|Requires dev-site renderer and visual QA|
+|Wheel/sdist build|Passed using flit_core 3.12.0|Install on target Python/Frappe still untested|
+|Ruff lint|Passed; source formatted|Not runtime verification|
 |CI workflow|Configured, not executed on GitHub|Execution not verified in GitHub Actions|
 
 The suite covers distinct orders for the same medicine, stable 24-slot generation,

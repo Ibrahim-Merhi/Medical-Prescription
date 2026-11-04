@@ -3,14 +3,23 @@
 The 24 cells represent selectable nursing slots, not automatic dose orders.
 No calculation here recommends a medicine or dose.
 """
+
 import re
 from copy import deepcopy
 
 YES = (1, "1", True, "Yes", "yes", "true", "True")
 HOURS = tuple(range(10, 24)) + tuple(range(10))
 TIMES = tuple(f"{h:02}:00:00" for h in HOURS)
-DOSAGE = {"OD": "1-0-0", "BID": "1-0-1", "TID": "1-1-1", "QID": "1-1-1-1",
-          "QOD": "1-0-0", "Once": "1-0-0", "STAT": "1-0-0", "Continuous": "1-0-0"}
+DOSAGE = {
+    "OD": "1-0-0",
+    "BID": "1-0-1",
+    "TID": "1-1-1",
+    "QID": "1-1-1-1",
+    "QOD": "1-0-0",
+    "Once": "1-0-0",
+    "STAT": "1-0-0",
+    "Continuous": "1-0-0",
+}
 
 
 def yes(value):
@@ -32,14 +41,25 @@ def frequency_interval(value):
     match = re.fullmatch(r"q(\d+)h", value)
     if match:
         return int(match[1])
-    return {"od":24,"once":24,"stat":24,"qod":24,"bid":12,"tid":8,"qid":6,
-            "continuous":1,"3x/week":24,"2x/week":24,"1x/week":24}.get(value, 0)
+    return {
+        "od": 24,
+        "once": 24,
+        "stat": 24,
+        "qod": 24,
+        "bid": 12,
+        "tid": 8,
+        "qid": 6,
+        "continuous": 1,
+        "3x/week": 24,
+        "2x/week": 24,
+        "1x/week": 24,
+    }.get(value, 0)
 
 
 def spacing_allowed(time_a, time_b, interval):
     a, b = int(str(time_a).split(":")[0]), int(str(time_b).split(":")[0])
-    distance = abs(a-b)
-    return distance == 0 or not interval or min(distance, 24-distance) >= interval
+    distance = abs(a - b)
+    return distance == 0 or not interval or min(distance, 24 - distance) >= interval
 
 
 def build_grid(items, existing, prescription_date):
@@ -68,29 +88,95 @@ def build_grid(items, existing, prescription_date):
         for time in TIMES:
             slot = key + "||" + time
             if slot in by_key:
+                row = by_key[slot]
+                if not any(
+                    yes(row.get(flag))
+                    for flag in (
+                        "step_1_done",
+                        "step_2_done",
+                        "completed",
+                        "given",
+                        "second_signature_done",
+                    )
+                ):
+                    row.update(
+                        medication=item.get("medication") or item.get("drug_name"),
+                        drug_name=item.get("drug_name") or item.get("medication"),
+                        dosage=item.get("dosage") or DOSAGE.get(item.get("frequency"), "1-0-0"),
+                        double_signature_required=int(yes(item.get("double_signature_required"))),
+                    )
                 continue
-            result.append({"item_unique_key":key, "medication":item.get("medication") or item.get("drug_name"),
-                           "drug_name":item.get("drug_name") or item.get("medication"),
-                           "scheduled_time":time,"scheduled_date":str(prescription_date),
-                           "schedule_unique_key":slot,
-                           "dosage":item.get("dosage") or DOSAGE.get(item.get("frequency"), "1-0-0"),
-                           "double_signature_required":int(yes(item.get("double_signature_required")))})
+            result.append(
+                {
+                    "item_unique_key": key,
+                    "medication": item.get("medication") or item.get("drug_name"),
+                    "drug_name": item.get("drug_name") or item.get("medication"),
+                    "scheduled_time": time,
+                    "scheduled_date": str(prescription_date),
+                    "schedule_unique_key": slot,
+                    "dosage": item.get("dosage") or DOSAGE.get(item.get("frequency"), "1-0-0"),
+                    "double_signature_required": int(yes(item.get("double_signature_required"))),
+                }
+            )
     return result
+
+
+ORDER_FIELDS = (
+    "medication",
+    "drug_name",
+    "dose_number",
+    "dose_uom",
+    "route",
+    "frequency",
+    "dosage",
+    "dosage_custom",
+    "interval",
+    "interval_uom",
+    "custom_time",
+)
+
+
+def protect_signed_orders(old_items, new_items, schedules):
+    """Preserve the clinical context of signed rows, including their original order."""
+    signed = {
+        r.get("item_unique_key")
+        for r in schedules
+        if any(
+            yes(r.get(flag))
+            for flag in (
+                "step_1_done",
+                "step_2_done",
+                "completed",
+                "given",
+                "second_signature_done",
+            )
+        )
+    }
+    old = {i.get("item_unique_key"): i for i in old_items}
+    new = {i.get("item_unique_key"): i for i in new_items}
+    for key in signed:
+        if key not in old or key not in new:
+            raise ValueError("A signed medication order cannot be removed or re-keyed")
+        if any(str(old[key].get(f) or "") != str(new[key].get(f) or "") for f in ORDER_FIELDS):
+            raise ValueError("A signed medication order cannot be changed; enter a new order")
 
 
 def duplication_outcome(item, fully_administered):
     """Return (history status, remaining days), following active duplicate API."""
     if yes(item.get("is_phone_order")) and not yes(item.get("phone_order_approved")):
         return "Pending Phone Order", 0
-    if any(yes(item.get(k)) for k in ("is_stopped", "stop_change", "stop_locked")) or item.get("stopped_on"):
+    if any(yes(item.get(k)) for k in ("is_stopped", "stop_change", "stop_locked")) or item.get(
+        "stopped_on"
+    ):
         return "Stopped", 0
-    once = (str(item.get("frequency") or "").lower().strip() in ("once", "stat")
-            or str(item.get("custom_time") or "").lower().strip() in ("over", "once", "stat")
-            or str(item.get("dosage") or "").lower().strip() in ("once only", "once", "stat")
-            or item.get("allow_duplicate_next_day") in (0, "0"))
+    once = (
+        str(item.get("frequency") or "").lower().strip() in ("once", "stat")
+        or str(item.get("custom_time") or "").lower().strip() in ("over", "once", "stat")
+        or str(item.get("dosage") or "").lower().strip() in ("once only", "once", "stat")
+        or item.get("allow_duplicate_next_day") in (0, "0")
+    )
     if once:
         return "One-Time Completed", 0
     remaining = period_days(item.get("remaining_period") or item.get("period"))
     remaining -= int(fully_administered)
     return ("Course Completed", 0) if remaining <= 0 else (None, remaining)
-

@@ -22,4 +22,3 @@ def require_validation(workflow):
 
 def stamp():
     return frappe.session.user, frappe.utils.now_datetime()
-

@@ -19,9 +19,9 @@ were selected. Sixty scoped permission rows and 68 scoped Property Setters are
 provided for review rather than automatic import. No unrelated customization set
 was bulk-installed.
 
-Local verification: 16 isolated tests passed; Python source parsed; three JS files
+Local verification: 24 isolated/synthetic tests passed; Python source parsed; three JS files
 passed Node syntax checks; a 100-order/2,400-slot pure grid benchmark ran. Tests
-were not executed in the required Python 3.14/Frappe runtime. Build, lint, Jinja/PDF,
+were not executed in the required Python 3.14/Frappe runtime. PDF,
 database, integration, migration, UI, security/concurrency and clinical acceptance
 remain unverified. See testing.md for exact distinctions.
 
@@ -42,3 +42,5 @@ workflow decisions for the documented source conflicts. Complete the remaining
 implementation and acceptance suite there, then select the GitHub destination and
 publish the reviewed release as the user requested.
 
+
+Follow-up corrections: signed-order context is protected; unstarted schedule metadata refreshes; prescription dates are immutable; read-only nursing mutations/signatures are rejected; floor-plan validation is serialized; medication policy reads are batched; print pagination no longer truncates after 36 orders. Wheel/sdist builds, Ruff checks and generic Jinja synthetic rendering passed. See fixes.md for remaining limits.

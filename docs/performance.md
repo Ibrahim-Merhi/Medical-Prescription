@@ -15,7 +15,7 @@ API lists are paginated to 100 rows. Grid construction maps existing keys and
 preserves history. Signature and discharge operations are serialized by admission.
 
 Known remaining costs: version recalculation writes every prescription in an
-admission; validation looks up each Medication separately; server loads whole
+admission; validation batches Medication policies in one read; server loads whole
 prescriptions for administration; floor/doctor predicates need query plans. No
 database indexes were added without representative plan measurements. No patient
 or clinical permission cache is introduced.

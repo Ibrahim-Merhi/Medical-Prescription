@@ -26,6 +26,7 @@ has_permission = {
 }
 doc_events = {
     "Patient": {"validate": "medical_prescription.integrations.patient_validate"},
-    "Healthcare Practitioner": {"validate": "medical_prescription.integrations.practitioner_validate"},
+    "Healthcare Practitioner": {
+        "validate": "medical_prescription.integrations.practitioner_validate"
+    },
 }
-

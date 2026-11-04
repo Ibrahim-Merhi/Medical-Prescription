@@ -17,7 +17,7 @@ Escalations are narrow: self-owned PIN writes, configuration installation and
 administration/discharge child/status writes after explicit authorization. They
 require real Frappe security tests; code review alone does not prove safety.
 
-Residual risks blocking release: floor-plan uniqueness races; incomplete emergency
+Residual risks blocking release: floor-plan serialization under real concurrent DB transactions; incomplete emergency
 audit policy; native User Permissions/report/REST behavior; doctor time-window
 semantics; mixed-role precedence; read-only role interaction; completed-row update
 guards; role grants on existing sites; replay/concurrent API behavior; distributed

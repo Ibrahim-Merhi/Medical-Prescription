@@ -29,6 +29,7 @@ The supplied prompt's final acceptance criteria are **not yet met**.
 Run local isolated checks from this directory:
 
 ```sh
+python3 -m pip install jinja2
 python3 -m unittest discover -s tests -v
 ```
 
