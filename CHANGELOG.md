@@ -26,3 +26,9 @@
 - Applied reference list columns, filters, demographics/tab layout and practitioner grid.
 - Added permission-filtered admission/prescription histories with pagination and same-tab links.
 - Connected Create Prescription and Finalize Discharge buttons to existing gated workflows.
+
+## Wide prescription form
+
+- Added full-width responsive four-column header, latest-version banner, patient and print buttons.
+- Added medication preparation summary using actual order fields, followed by discharge/pharmacy fields.
+- Retained native order and administration tables below the overview. Visual acceptance on a Frappe site remains outstanding.
