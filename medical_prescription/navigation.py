@@ -13,15 +13,21 @@ def has_launcher_permission():
 
 
 def ensure_launcher():
-    if frappe.db.exists("Desktop Icon", LABEL):
-        icon = frappe.get_doc("Desktop Icon", LABEL)
+    label = LABEL
+    if (
+        frappe.db.exists("Desktop Icon", label)
+        and frappe.db.get_value("Desktop Icon", label, "app") != APP
+    ):
+        label = "Medical Prescription"
+    if frappe.db.exists("Desktop Icon", label):
+        icon = frappe.get_doc("Desktop Icon", label)
         if icon.app != APP:
-            frappe.throw("The Healthcare desktop label is already used by another app or custom icon")
+            frappe.throw("The Medical Prescription desktop label is already used by another app or custom icon")
     else:
         icon = frappe.new_doc("Desktop Icon")
     icon.update(
         {
-            "label": LABEL,
+            "label": label,
             "app": APP,
             "icon_type": "App",
             "link_type": "External",
