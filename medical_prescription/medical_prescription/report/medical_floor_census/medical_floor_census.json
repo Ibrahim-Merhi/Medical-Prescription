@@ -38,6 +38,15 @@
     },
     {
       "role": "Healthcare Practitioner"
+    },
+    {
+      "role": "Healthcare Administrator"
+    },
+    {
+      "role": "Nurse Supervisor"
+    },
+    {
+      "role": "Nursing Manager"
     }
   ],
   "prepared_report": 0

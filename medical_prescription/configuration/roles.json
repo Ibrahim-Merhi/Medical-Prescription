@@ -73,5 +73,10 @@
     "doctype": "Role",
     "role_name": "System Manager",
     "desk_access": 1
+  },
+  {
+    "doctype": "Role",
+    "role_name": "Healthcare Administrator",
+    "desk_access": 1
   }
 ]

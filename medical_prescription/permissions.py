@@ -4,7 +4,7 @@ import frappe
 
 MANAGERS = {"System Manager", "Healthcare Manager", "Healthcare Administrator"}
 DOCTORS = {"Physician", "Doctor", "Healthcare User", "Healthcare Practitioner"}
-NURSES = {"Nurse", "Nursing User"}
+NURSES = {"Nurse", "Nursing User", "Nurse Supervisor", "Nursing Manager"}
 READ_ALL_ACTIVE = {"Pharmacist", "Resident", "Medical Prescription Viewer"}
 READ_ONLY = {"Medical Prescription Viewer", "Read Only"}
 
