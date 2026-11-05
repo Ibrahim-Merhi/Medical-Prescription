@@ -68,3 +68,32 @@ class PatientViewTests(unittest.TestCase):
         )
         self.assertIn("custom_admissions_history", layout["field_order"])
         self.assertIn("custom_medical_prescription_history", layout["field_order"])
+
+    def test_profile_uses_linked_admission_and_rejects_wrong_patient(self):
+        module, fake = self.load()
+        patient = Mock(name="patient-doc")
+        patient.name = "P1"
+        patient.inpatient_record = "IP1"
+        patient.get.return_value = "IP1"
+        patient.meta.has_field.return_value = True
+        admission = Mock()
+        admission.patient = "P1"
+        admission.name = "IP1"
+        admission.docstatus = 0
+        admission.meta.has_field.return_value = True
+        source = {
+            "custom_floor": "First",
+            "custom_service_unit": "Unit 1",
+            "custom_medical_file": "004422",
+            "custom_case_number": "214",
+            "medical_department": "Ward",
+        }
+        admission.get.side_effect = source.get
+        fake.get_doc.side_effect = lambda dt, name: patient if dt == "Patient" else admission
+        result = module.inpatient_profile("P1")
+        admission.check_permission.assert_called_once_with("read")
+        self.assertEqual(result["values"]["custom_latest_case_number"], "214")
+        self.assertEqual(result["values"]["custom_medical_file"], "004422")
+        admission.patient = "P2"
+        with self.assertRaises(ValueError):
+            module.inpatient_profile("P1")

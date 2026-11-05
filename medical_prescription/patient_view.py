@@ -70,3 +70,29 @@ def actions(patient):
         "prescribing_enabled": "prescribing" in allowed,
         "discharge_enabled": "discharge" in allowed,
     }
+
+
+PROFILE_FIELDS = {
+    "custom_floor": "custom_floor",
+    "custom_service_unit": "custom_service_unit",
+    "custom_medical_file": "custom_medical_file",
+    "custom_latest_case_number": "custom_case_number",
+    "custom_department": "medical_department",
+}
+
+
+@frappe.whitelist(methods=["GET"])
+def inpatient_profile(patient):
+    doc = patient_access(patient)
+    if not doc.get("inpatient_record"):
+        return {"values": {}, "message": "No Inpatient Record is linked to this Patient."}
+    ip = frappe.get_doc("Inpatient Record", doc.inpatient_record)
+    ip.check_permission("read")
+    if ip.patient != doc.name or ip.docstatus == 2:
+        frappe.throw("The linked admission is cancelled or belongs to another patient")
+    values = {
+        target: ip.get(source)
+        for target, source in PROFILE_FIELDS.items()
+        if doc.meta.has_field(target) and ip.meta.has_field(source)
+    }
+    return {"values": values, "inpatient_record": ip.name}

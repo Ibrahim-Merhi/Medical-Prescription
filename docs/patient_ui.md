@@ -24,3 +24,14 @@ validation gates. This UI update does not enable unvalidated clinical workflows.
 has been performed here. After updating the dev server, compare all three tabs and list
 columns, test history paging and restricted users, and verify the validated workflow actions.
 The screenshot patient identities have not been copied into app data or tests.
+
+## Inpatient profile fetch and action visibility
+
+On opening a saved, clean Patient form, the linked Inpatient Record is checked for read
+permission, matching patient and non-cancelled status. Floor, service unit, medical file,
+case number and department are copied into the displayed fields. For users with write
+permission this marks changes unsaved: Save the Patient to persist them. Read-only users
+see the permitted admission values without a database write. Unsaved edits are not overwritten.
+Both clinical action buttons remain visible but disabled with explanations when unavailable.
+An endpoint failure is displayed instead of silently hiding the buttons. Native Print and
+Save controls remain provided by Frappe (Save appears when changes need saving).
