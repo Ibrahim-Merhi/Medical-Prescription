@@ -65,8 +65,8 @@
             try {
                 const {message: action} = await frappe.call({method: "medical_prescription.patient_view.actions", type: "GET", args: {patient}});
                 if (frm.doc.name !== patient) return;
-                create.remove();
-                discharge.remove();
+                frm.remove_custom_button(__("Create Prescription"));
+                frm.remove_custom_button(__("Finalize Discharge"));
                 const reasons = [];
                 if (!action.can_create) reasons.push(__("Create Prescription: your role or create permission does not allow this action."));
                 else if (!action.prescribing_enabled) reasons.push(__("Create Prescription: prescribing is pending staging validation."));
@@ -75,11 +75,13 @@
                 if (!action.inpatient_record) reasons.push(__("An accessible active Inpatient Record is required."));
                 notice.text([notice.text(), ...reasons].filter(Boolean).join(" "));
                 {
-                    const button = frm.add_custom_button(__("Create Prescription"), () => {
+                    frm.add_custom_button(__("Create Prescription"), () => {
+                        if (!action.can_create) { frappe.msgprint(__("You need permission to create Medical Prescriptions.")); return; }
+                        if (!action.inpatient_record) { frappe.msgprint(__("Link an accessible active Inpatient Record before creating a prescription.")); return; }
                         if (frm.is_dirty()) { frappe.msgprint(__("Save the Patient before creating a prescription.")); return; }
+                        if (!action.prescribing_enabled) frappe.show_alert({message: __("You can prepare the form. Saving requires prescribing workflow validation."), indicator: "orange"});
                         frappe.new_doc("Medical Prescription", {patient, inpatient_record: action.inpatient_record, prescription_date: frappe.datetime.get_today()});
                     }).addClass("btn-primary");
-                    button.prop("disabled", !action.can_create || !action.prescribing_enabled || !action.inpatient_record).attr("title", !action.prescribing_enabled ? __("Prescribing requires staging validation.") : !action.inpatient_record ? __("An accessible active admission is required.") : "");
                 }
                 {
                     const button = frm.add_custom_button(__("Finalize Discharge"), () => {
