@@ -20,3 +20,9 @@
 
 - Grouped dashboard, reports, patient care, medicines, staff, floor/unit masters and settings in one Desk sidebar.
 - Added existing-DocType checks and preserved unrelated local links across repeated migrations.
+
+## Patient reference screens
+
+- Applied reference list columns, filters, demographics/tab layout and practitioner grid.
+- Added permission-filtered admission/prescription histories with pagination and same-tab links.
+- Connected Create Prescription and Finalize Discharge buttons to existing gated workflows.

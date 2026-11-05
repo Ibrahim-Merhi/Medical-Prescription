@@ -1,0 +1,279 @@
+{
+  "field_order": [
+    "basic_info",
+    "naming_series",
+    "first_name",
+    "middle_name",
+    "last_name",
+    "patient_name",
+    "sex",
+    "image",
+    "custom_attending_practitioner",
+    "custom_doctor_name",
+    "custom_medical_file",
+    "custom_department",
+    "custom_floor",
+    "custom_service_unit",
+    "column_break_14",
+    "status",
+    "custom_admission_status",
+    "uid",
+    "inpatient_record",
+    "inpatient_status",
+    "report_preference",
+    "dob",
+    "age_html",
+    "blood_group",
+    "mobile",
+    "phone",
+    "email",
+    "invite_user",
+    "user_id",
+    "custom_latest_case_number",
+    "custom_section_break_ygazh",
+    "custom_practitioner",
+    "customer_details_section",
+    "customer",
+    "customer_group",
+    "territory",
+    "country",
+    "column_break_24",
+    "default_currency",
+    "default_price_list",
+    "language",
+    "more_info",
+    "patient_details",
+    "dashboard_tab",
+    "address_and_contact_tab",
+    "address_contacts",
+    "address_html",
+    "column_break_22",
+    "contact_html",
+    "sb_relation",
+    "patient_relation",
+    "medical_history_tab",
+    "personal_and_social_history",
+    "occupation",
+    "column_break_25",
+    "marital_status",
+    "allergy_medical_and_surgical_history",
+    "allergies",
+    "medication",
+    "column_break_20",
+    "medical_history",
+    "surgical_history",
+    "risk_factors",
+    "tobacco_past_use",
+    "tobacco_current_use",
+    "alcohol_past_use",
+    "alcohol_current_use",
+    "column_break_32",
+    "surrounding_factors",
+    "other_risk_factors",
+    "custom_section_break_h1jy4",
+    "custom_admissions_history",
+    "custom_medical_prescriptions",
+    "custom_medical_prescription_history",
+    "custom_admissions"
+  ],
+  "properties": [
+    {
+      "field": "middle_name",
+      "property": "label",
+      "value": "Middle Name",
+      "type": "Data"
+    },
+    {
+      "field": "uid",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_medical_file",
+      "property": "in_list_view",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "patient_name",
+      "property": "in_list_view",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_service_unit",
+      "property": "in_list_view",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_latest_case_number",
+      "property": "in_list_view",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "phone",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "mobile",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "user_id",
+      "property": "in_list_view",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "custom_floor",
+      "property": "in_list_view",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_department",
+      "property": "in_list_view",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "status",
+      "property": "in_list_view",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "mobile",
+      "property": "in_standard_filter",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "mobile",
+      "property": "in_list_view",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "uid",
+      "property": "in_standard_filter",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "email",
+      "property": "in_standard_filter",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "email",
+      "property": "in_list_view",
+      "value": "0",
+      "type": "Check"
+    },
+    {
+      "field": "medical_history_tab",
+      "property": "label",
+      "value": "Medical & Admissions History",
+      "type": "Data"
+    },
+    {
+      "field": "inpatient_status",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "personal_and_social_history",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "address_and_contact_tab",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "dashboard_tab",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "invite_user",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "email",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "report_preference",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "more_info",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "customer_details_section",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "patient_name",
+      "property": "in_standard_filter",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_medical_file",
+      "property": "in_standard_filter",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_floor",
+      "property": "in_standard_filter",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_service_unit",
+      "property": "in_standard_filter",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_admissions",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    },
+    {
+      "field": "custom_department",
+      "property": "hidden",
+      "value": "1",
+      "type": "Check"
+    }
+  ]
+}

@@ -41,3 +41,5 @@ doc_events = {
         "validate": "medical_prescription.integrations.practitioner_validate"
     },
 }
+
+doctype_list_js = {"Patient": "public/js/patient_list.js"}

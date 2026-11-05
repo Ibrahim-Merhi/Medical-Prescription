@@ -5,7 +5,7 @@ Local checks updated on 2026-11-05:
 |Check|Result|Limit|
 |---|---|---|
 |UTF-8 CSV parsing and row-width validation|8 files passed; zero malformed rows|Metadata/configuration only|
-|Isolated Python suite|32 tests passed, zero failures|Python 3.9.6, not target Python 3.14/Frappe|
+|Isolated Python suite|36 tests passed, zero failures|Python 3.9.6, not target Python 3.14/Frappe|
 |Python AST parsing|Passed for all repository Python files|No Frappe imports/runtime exercised|
 |App child-table linkage and field identity|Passed for 12 DocTypes|No database schema synchronization|
 |JavaScript syntax|Form, dashboard and report scripts passed Node --check|No browser/Frappe UI exercised|
@@ -55,3 +55,5 @@ alone does not satisfy these tests.
 
 
 Dashboard additions and dev-site acceptance: see [dashboard.md](dashboard.md).
+
+Patient UI checks and limitations: see [patient_ui.md](patient_ui.md).
