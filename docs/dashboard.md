@@ -61,3 +61,23 @@ clear cache and restart. Open the dashboard as Administrator and a restricted nu
 counts with native lists. Test empty data, scheduled admission, admitted/discharge-scheduled
 patients, blank floors and duplicate admissions. Confirm reports and links remain in the
 same Desk tab and repeated migration does not duplicate sidebar entries.
+
+## Unified sidebar
+
+The Medical Prescription sidebar now groups the dashboard, census reports, Patients,
+Inpatient Records, Patient Encounters, Appointments, Vital Signs, Prescriptions,
+Medications, drug Items, dosage/duration masters, Healthcare Practitioners, Employees,
+Floor Assignment Plans, Floors, both prescription and Healthcare Service Units,
+Service Unit Types, Medical Departments, app/Healthcare Settings and Users.
+
+Only existing non-child DocTypes are linked. Employee is a staff directory, not a
+filtered nurse-only directory; nurse allocation uses Floor Assignment Plan. Doctors
+use Healthcare Practitioner. Native record permissions apply to every destination.
+
+Child tables (medication items/schedules, past drugs, assigned doctors and floor
+assignment details) stay within their parent forms. Nurse PIN is credential storage
+with no list permissions and is deliberately excluded from the sidebar.
+
+Migration refreshes the app-owned sections and retains unrelated local entries under
+Additional Links. Managed link labels, order and grouping follow the app definitions.
+Repeated migrations do not duplicate entries.

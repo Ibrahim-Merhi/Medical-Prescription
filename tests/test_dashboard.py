@@ -116,25 +116,32 @@ class DashboardTests(unittest.TestCase):
 
 class NavigationTests(unittest.TestCase):
     def test_repeated_upgrade_preserves_existing_items_and_adds_dashboard_once(self):
+        class Row(types.SimpleNamespace):
+            def __getattr__(self, name):
+                return None
+
+            def as_dict(self):
+                return vars(self).copy()
+
         class Sidebar:
             app = "medical_prescription"
 
             def __init__(self):
                 self.items = [
-                    types.SimpleNamespace(
-                        link_type="DocType", link_to="Medical Prescription", idx=1
-                    )
+                    Row(type="Link", link_type="DocType", link_to="Medical Prescription"),
+                    Row(type="Link", label="Local Help", link_type="URL", url="/help"),
                 ]
 
-            def append(self, field, row):
-                self.items.append(types.SimpleNamespace(**row))
+            def set(self, field, rows):
+                self.items = [Row(**row) for row in rows]
 
             def save(self, **kwargs):
                 pass
 
         sidebar = Sidebar()
         fake = Mock()
-        fake.db.exists.return_value = True
+        fake.db.exists.side_effect = lambda dt, name: name != "Dosage Form"
+        fake.get_meta.return_value.istable = False
         fake.db.get_value.return_value = "medical_prescription"
         icon = Mock(app="medical_prescription")
         fake.get_doc.side_effect = lambda dt, name: sidebar if dt == "Workspace Sidebar" else icon
@@ -142,8 +149,22 @@ class NavigationTests(unittest.TestCase):
             sys.modules.pop("medical_prescription.navigation", None)
             module = importlib.import_module("medical_prescription.navigation")
         module.ensure_launcher()
+        initial = [r.as_dict() for r in sidebar.items]
         module.ensure_launcher()
-        self.assertEqual(len(sidebar.items), 4)
+        self.assertEqual(initial, [r.as_dict() for r in sidebar.items])
         self.assertEqual(sidebar.items[0].link_to, "medical-overview")
-        self.assertEqual(sidebar.items[-1].link_to, "Medical Prescription")
+        self.assertEqual(sidebar.items[-1].label, "Local Help")
+        targets = [r.link_to for r in sidebar.items if r.type == "Link"]
+        for target in (
+            "Patient",
+            "Employee",
+            "Healthcare Practitioner",
+            "Floor Assignment Plan",
+            "Inpatient Record",
+            "Medical Prescription",
+            "Medical Prescription Settings",
+        ):
+            self.assertEqual(targets.count(target), 1)
+        self.assertNotIn("Dosage Form", targets)
+        self.assertNotIn("Nurse PIN", targets)
         self.assertEqual(icon.update.call_args.args[0]["link_type"], "Workspace Sidebar")

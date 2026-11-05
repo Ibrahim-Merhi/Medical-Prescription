@@ -15,3 +15,8 @@
 - Added floor and inpatient census Script Reports with permission-filtered data.
 - Added dashboard-first sidebar navigation; preserves existing links on migration.
 - Added duplicate-admission and unassigned-floor indicators plus isolated regression tests.
+
+## Unified clinical sidebar
+
+- Grouped dashboard, reports, patient care, medicines, staff, floor/unit masters and settings in one Desk sidebar.
+- Added existing-DocType checks and preserved unrelated local links across repeated migrations.
