@@ -56,6 +56,15 @@ function render_prescription_overview(frm) {
     if (!document.getElementById("medical-prescription-wide-style")) {
         $("<style id='medical-prescription-wide-style'>").text(`
             .medical-prescription-wide .container {max-width:100%;width:100%}
+            .medical-prescription-wide .form-layout,
+            .medical-prescription-wide .form-page,
+            .medical-prescription-wide .form-section,
+            .medical-prescription-wide .section-body,
+            .medical-prescription-wide .form-dashboard-section,
+            .medical-prescription-wide .form-dashboard {max-width:none!important;width:100%!important;margin-left:0!important;margin-right:0!important}
+            .medical-prescription-wide .form-section {padding-left:24px;padding-right:24px}
+            .medical-prescription-wide .rx-patient-box {border:1px solid #20a464!important;border-radius:5px!important;padding:7px 16px!important;font-weight:700!important;text-transform:uppercase;background:var(--card-bg)!important;color:var(--text-color)!important}
+
             .medical-prescription-wide .layout-main-section-wrapper {margin:0}
             .medical-prescription-wide .layout-side-section {display:none}
             .medical-prescription-wide .layout-main-section {width:100%;flex:1;max-width:100%}
@@ -76,7 +85,7 @@ function render_prescription_overview(frm) {
     });
     if (!frm.is_new()) {
         frm.set_intro(__(frm.doc.is_latest_version ? "This is the latest prescription" : "This is a previous prescription version"), frm.doc.is_latest_version ? "green" : "orange");
-        frm.add_custom_button(frm.doc.patient_name || frm.doc.patient || __("Patient"), () => frappe.set_route("Form", "Patient", frm.doc.patient));
+        frm.add_custom_button((frm.doc.patient_name || frm.doc.patient || __("Patient")).toLocaleUpperCase(), () => frappe.set_route("Form", "Patient", frm.doc.patient)).addClass("rx-patient-box");
         frm.add_custom_button(__("Print Prescription"), () => frm.print_doc());
     }
     const wrapper = frm.fields_dict.custom_schedule_matrix?.$wrapper;
