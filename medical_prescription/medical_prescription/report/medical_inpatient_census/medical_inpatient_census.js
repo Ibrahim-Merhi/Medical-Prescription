@@ -1,0 +1,1 @@
+frappe.query_reports["Medical Inpatient Census"] = {filters: [{fieldname: "floor", label: __("Floor (or Unassigned)"), fieldtype: "Data"}, {fieldname: "status", label: __("Status"), fieldtype: "Select", options: "\nAdmitted\nDischarge Scheduled"}]};

@@ -8,3 +8,10 @@
 - Added isolated checks, source inventory, conflict reports and release blockers.
 - Not a completed migration or production release; see docs/validation_gates.md.
 
+
+## Medical dashboard and census reports
+
+- Added current patient/inpatient KPIs, floor census and prescription-status charts.
+- Added floor and inpatient census Script Reports with permission-filtered data.
+- Added dashboard-first sidebar navigation; preserves existing links on migration.
+- Added duplicate-admission and unassigned-floor indicators plus isolated regression tests.

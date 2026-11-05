@@ -1,14 +1,14 @@
 # Test report
 
-Executed locally on 2026-11-04:
+Local checks updated on 2026-11-05:
 
 |Check|Result|Limit|
 |---|---|---|
 |UTF-8 CSV parsing and row-width validation|8 files passed; zero malformed rows|Metadata/configuration only|
-|Isolated Python suite|24 tests passed, zero failures|Python 3.9.6, not target Python 3.14/Frappe|
+|Isolated Python suite|32 tests passed, zero failures|Python 3.9.6, not target Python 3.14/Frappe|
 |Python AST parsing|Passed for all repository Python files|No Frappe imports/runtime exercised|
 |App child-table linkage and field identity|Passed for 12 DocTypes|No database schema synchronization|
-|JavaScript syntax|All 3 form scripts passed Node --check|No browser/Frappe UI exercised|
+|JavaScript syntax|Form, dashboard and report scripts passed Node --check|No browser/Frappe UI exercised|
 |Pure grid microbenchmark|Executed; see performance_results.json|No API/SQL/browser measurement|
 |Generic Jinja rendering|3 synthetic cases passed, including 55 medicine rows|Not Frappe sandbox or PDF rendering|
 |PDF rendering|Not executed|Requires dev-site renderer and visual QA|
@@ -53,3 +53,5 @@ Measure performance against a stated workload. Clinical reviewers must approve
 medication, signature, discharge and nursing-day semantics. A successful install
 alone does not satisfy these tests.
 
+
+Dashboard additions and dev-site acceptance: see [dashboard.md](dashboard.md).

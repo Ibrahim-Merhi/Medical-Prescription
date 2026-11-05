@@ -28,6 +28,16 @@ def prerequisites():
 
 def conflicts(check_ownership=True):
     problems = []
+    for doctype, name in (
+        ("Page", "medical-overview"),
+        ("Report", "Medical Floor Census"),
+        ("Report", "Medical Inpatient Census"),
+    ):
+        if (
+            frappe.db.exists(doctype, name)
+            and frappe.db.get_value(doctype, name, "module") != "Medical Prescription"
+        ):
+            problems.append(f"{doctype} {name}: belongs to another module")
     for name, schema in records("source_schema").items():
         if not frappe.db.exists("DocType", name):
             continue

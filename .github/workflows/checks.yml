@@ -22,5 +22,5 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: find medical_prescription/public/js -name '*.js' -exec node --check {} \;
+      - run: find medical_prescription -name '*.js' -exec node --check {} \;
 

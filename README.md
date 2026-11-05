@@ -36,3 +36,10 @@ python3 -m unittest discover -s tests -v
 MIT license is proposed for the new repository. Confirm rights to redistribute
 the supplied configuration and print layouts before publishing.
 
+
+## Dashboard and census reports
+
+Medical Dashboard adds permission-filtered patient totals, current inpatient counts,
+scheduled admission/discharge counts, floor census charts and prescription status charts.
+The sidebar includes Floor Census and Inpatient Census reports.
+See [definitions and rollout checks](docs/dashboard.md).

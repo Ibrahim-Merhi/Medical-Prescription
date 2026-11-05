@@ -4,7 +4,7 @@ import frappe
 
 LABEL = "Healthcare"
 APP = "medical_prescription"
-ROUTE = "/app/medical-prescription"
+ROUTE = "/app/medical-overview"
 LOGO = "/assets/medical_prescription/images/healthcare.svg"
 
 
@@ -37,6 +37,23 @@ def ensure_launcher():
             }
         )
         sidebar.insert(ignore_permissions=True)
+    entries = [
+        ("Medical Dashboard", "Page", "medical-overview"),
+        ("Floor Census", "Report", "Medical Floor Census"),
+        ("Inpatient Census", "Report", "Medical Inpatient Census"),
+    ]
+    changed = False
+    for title, link_type, target in reversed(entries):
+        if not any(row.link_type == link_type and row.link_to == target for row in sidebar.items):
+            sidebar.append(
+                "items", {"type": "Link", "label": title, "link_type": link_type, "link_to": target}
+            )
+            sidebar.items.insert(0, sidebar.items.pop())
+            changed = True
+    if changed:
+        for idx, item in enumerate(sidebar.items, 1):
+            item.idx = idx
+        sidebar.save(ignore_permissions=True)
     label = LABEL
     if (
         frappe.db.exists("Desktop Icon", label)
@@ -46,7 +63,9 @@ def ensure_launcher():
     if frappe.db.exists("Desktop Icon", label):
         icon = frappe.get_doc("Desktop Icon", label)
         if icon.app != APP:
-            frappe.throw("The Medical Prescription desktop label is already used by another app or custom icon")
+            frappe.throw(
+                "The Medical Prescription desktop label is already used by another app or custom icon"
+            )
     else:
         icon = frappe.new_doc("Desktop Icon")
     icon.update(

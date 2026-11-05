@@ -12,7 +12,7 @@ add_to_apps_screen = [
         "name": app_name,
         "title": "Healthcare",
         "logo": app_logo_url,
-        "route": "/app/medical-prescription",
+        "route": "/app/medical-overview",
         "has_permission": "medical_prescription.navigation.has_launcher_permission",
     }
 ]

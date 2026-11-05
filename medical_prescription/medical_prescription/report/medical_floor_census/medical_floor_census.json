@@ -1,0 +1,44 @@
+{
+  "doctype": "Report",
+  "name": "Medical Floor Census",
+  "report_name": "Medical Floor Census",
+  "ref_doctype": "Inpatient Record",
+  "report_type": "Script Report",
+  "is_standard": "Yes",
+  "module": "Medical Prescription",
+  "disabled": 0,
+  "add_total_row": 0,
+  "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Physician"
+    },
+    {
+      "role": "Doctor"
+    },
+    {
+      "role": "Healthcare User"
+    },
+    {
+      "role": "Nurse"
+    },
+    {
+      "role": "Nursing User"
+    },
+    {
+      "role": "Medical Prescription Viewer"
+    },
+    {
+      "role": "Pharmacist"
+    },
+    {
+      "role": "Resident"
+    },
+    {
+      "role": "Healthcare Practitioner"
+    }
+  ],
+  "prepared_report": 0
+}

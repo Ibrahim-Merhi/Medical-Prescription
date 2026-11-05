@@ -1,0 +1,9 @@
+{
+  "doctype": "Page",
+  "name": "medical-overview",
+  "page_name": "medical-overview",
+  "title": "Medical Dashboard",
+  "module": "Medical Prescription",
+  "standard": "Yes",
+  "roles": []
+}
