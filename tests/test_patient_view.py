@@ -97,3 +97,15 @@ class PatientViewTests(unittest.TestCase):
         admission.patient = "P2"
         with self.assertRaises(ValueError):
             module.inpatient_profile("P1")
+
+
+    def test_administrator_can_use_actions_with_readonly_roles(self):
+        module, fake = self.load()
+        fake.session.user = "Administrator"
+        fake.get_roles.return_value = ["Read Only", "Medical Prescription Viewer"]
+        fake.conf.get.return_value = []
+        fake.get_list.return_value = [{"name": "IP1"}]
+        result = module.actions("P1")
+        self.assertTrue(result["can_create"])
+        self.assertTrue(result["can_discharge"])
+        self.assertFalse(result["prescribing_enabled"])

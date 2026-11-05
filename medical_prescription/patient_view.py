@@ -44,7 +44,7 @@ def actions(patient):
     doc = patient_access(patient)
     roles = set(frappe.get_roles())
     manager = frappe.session.user == "Administrator"
-    readonly = bool(roles & READ_ONLY)
+    readonly = not manager and bool(roles & READ_ONLY)
     allowed = frappe.conf.get("medical_prescription_validated_workflows") or []
     admission = None
     if doc.get("inpatient_record") and frappe.has_permission("Inpatient Record", "read"):

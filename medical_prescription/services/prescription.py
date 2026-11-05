@@ -38,7 +38,7 @@ CONTROLLED = (
 
 def validate(doc):
     require_roles(DOCTORS | MANAGERS)
-    if set(frappe.get_roles()) & READ_ONLY:
+    if frappe.session.user != "Administrator" and set(frappe.get_roles()) & READ_ONLY:
         frappe.throw("Read-only users cannot modify prescriptions", frappe.PermissionError)
     require_validation("prescribing")
     lock_admission(doc.inpatient_record)

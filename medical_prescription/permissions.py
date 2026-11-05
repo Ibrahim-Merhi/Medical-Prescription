@@ -56,7 +56,7 @@ def prescription_permission(doc, user=None, permission_type=None, **kwargs):
     roles = set(frappe.get_roles(user))
     kind = permission_type or kwargs.get("ptype") or "read"
     if kind in ("write", "create", "delete", "submit", "cancel", "amend"):
-        if roles & READ_ONLY:
+        if user != "Administrator" and roles & READ_ONLY:
             return False
         if user != "Administrator" and not roles & (DOCTORS | MANAGERS):
             return False
@@ -78,7 +78,7 @@ def prescription_permission(doc, user=None, permission_type=None, **kwargs):
 def require_roles(roles):
     assigned = set(frappe.get_roles())
     if (
-        assigned & READ_ONLY
+        (frappe.session.user != "Administrator" and assigned & READ_ONLY)
         or frappe.session.user == "Guest"
         or (frappe.session.user != "Administrator" and not assigned & set(roles))
     ):

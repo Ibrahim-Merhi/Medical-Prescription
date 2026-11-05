@@ -54,3 +54,12 @@ class PolicyTests(unittest.TestCase):
             mod = importlib.import_module("medical_prescription.permissions")
             with self.assertRaises(PermissionError):
                 mod.require_roles({"Nurse"})
+
+
+    def test_administrator_ignores_readonly_role_for_create_and_actions(self):
+        fake = self.policy(["Read Only", "Medical Prescription Viewer"], "Administrator")
+        with patch.dict(sys.modules, {"frappe": fake}):
+            sys.modules.pop("medical_prescription.permissions", None)
+            mod = importlib.import_module("medical_prescription.permissions")
+            self.assertIsNone(mod.prescription_permission(None, permission_type="create"))
+            mod.require_roles({"Doctor"})
