@@ -109,3 +109,6 @@ def after_install():
     for definition in records("print_formats"):
         if not frappe.db.exists("Print Format", definition["name"]):
             frappe.get_doc(definition).insert(ignore_permissions=True)
+    from medical_prescription.navigation import ensure_launcher
+
+    ensure_launcher()

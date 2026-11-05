@@ -6,6 +6,17 @@ app_email = ""
 app_license = "MIT"
 required_apps = ["erpnext", "healthcare", "hrms"]
 
+app_logo_url = "/assets/medical_prescription/images/healthcare.svg"
+add_to_apps_screen = [
+    {
+        "name": app_name,
+        "title": "Healthcare",
+        "logo": app_logo_url,
+        "route": "/app/medical-prescription",
+        "has_permission": "medical_prescription.navigation.has_launcher_permission",
+    }
+]
+
 before_install = "medical_prescription.install.before_install"
 after_install = "medical_prescription.install.after_install"
 before_migrate = "medical_prescription.install.before_migrate"
