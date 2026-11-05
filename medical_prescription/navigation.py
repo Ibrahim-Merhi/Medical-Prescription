@@ -13,6 +13,30 @@ def has_launcher_permission():
 
 
 def ensure_launcher():
+    sidebar_name = "Medical Prescription"
+    if frappe.db.exists("Workspace Sidebar", sidebar_name):
+        sidebar = frappe.get_doc("Workspace Sidebar", sidebar_name)
+        if sidebar.app != APP:
+            frappe.throw("The Medical Prescription sidebar belongs to another app or customization")
+    else:
+        sidebar = frappe.get_doc(
+            {
+                "doctype": "Workspace Sidebar",
+                "title": sidebar_name,
+                "app": APP,
+                "module": "Medical Prescription",
+                "standard": 1,
+                "items": [
+                    {
+                        "type": "Link",
+                        "label": "Medical Prescription",
+                        "link_type": "DocType",
+                        "link_to": "Medical Prescription",
+                    }
+                ],
+            }
+        )
+        sidebar.insert(ignore_permissions=True)
     label = LABEL
     if (
         frappe.db.exists("Desktop Icon", label)
@@ -30,8 +54,10 @@ def ensure_launcher():
             "label": label,
             "app": APP,
             "icon_type": "App",
-            "link_type": "External",
-            "link": ROUTE,
+            "link_type": "Workspace Sidebar",
+            "link_to": sidebar_name,
+            "sidebar": sidebar_name,
+            "link": "",
             "logo_url": LOGO,
             "standard": 1,
             "hidden": 0,
